@@ -1,0 +1,30 @@
+﻿Build started 13.09.2017 20:30:06.
+     1>Project "E:\csgoaimgraph\CSGOAimGraph\CSGOAimGraph\CSGOAimGraph.vcxproj" on node 2 (Rebuild target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(357,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+     1>ClCompile:
+         F:\VS 2013 Express\VC\bin\CL.exe /c /I"E:\csgoaimgraph\hl2sdk-csgo\game\shared" /I"E:\csgoaimgraph\hl2sdk-csgo\game\server" /I"E:\csgoaimgraph\hl2sdk-csgo\public\tier1" /I"E:\csgoaimgraph\hl2sdk-csgo\public\tier0" /I"E:\csgoaimgraph\hl2sdk-csgo\public" /I"E:\csgoaimgraph\hl2sdk-csgo\common" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _USRDLL /D COMPILER_MSVC /D COMPILER_MSVC32 /D SOURCE_ENGINE=10 /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt globalDefs.cpp main.cpp pluginCrap.cpp sigscan.cpp
+         sigscan.cpp
+         pluginCrap.cpp
+         main.cpp
+         globalDefs.cpp
+         Generating Code...
+       Link:
+         F:\VS 2013 Express\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\csgo\addons\demo_analysis\CSGOAimGraph.dll" /INCREMENTAL /NOLOGO tier0.lib tier1.lib tier2.lib vstdlib.lib interfaces.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:libc /NODEFAULTLIB:libcd /NODEFAULTLIB:libcmt /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\csgo\addons\demo_analysis\CSGOAimGraph.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\csgo\addons\demo_analysis\CSGOAimGraph.lib" /MACHINE:X86 /DLL Debug\globalDefs.obj
+         Debug\main.obj
+         Debug\pluginCrap.obj
+         Debug\sigscan.obj
+            Creating library C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\csgo\addons\demo_analysis\CSGOAimGraph.lib and object C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\csgo\addons\demo_analysis\CSGOAimGraph.exp
+     1>tier1.lib(characterset.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'tier1.lib(characterset.obj)' or at 'C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\csgo\addons\demo_analysis\vc100.pdb'; linking object as if no debug info
+     1>tier1.lib(convar.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'tier1.lib(convar.obj)' or at 'C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\csgo\addons\demo_analysis\vc100.pdb'; linking object as if no debug info
+     1>tier1.lib(interface.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'tier1.lib(interface.obj)' or at 'C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\csgo\addons\demo_analysis\vc100.pdb'; linking object as if no debug info
+     1>tier1.lib(strtools.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'tier1.lib(strtools.obj)' or at 'C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\csgo\addons\demo_analysis\vc100.pdb'; linking object as if no debug info
+     1>tier1.lib(tier1.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'tier1.lib(tier1.obj)' or at 'C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\csgo\addons\demo_analysis\vc100.pdb'; linking object as if no debug info
+     1>tier1.lib(utlbuffer.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'tier1.lib(utlbuffer.obj)' or at 'C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\csgo\addons\demo_analysis\vc100.pdb'; linking object as if no debug info
+     1>tier1.lib(utlstring.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'tier1.lib(utlstring.obj)' or at 'C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\csgo\addons\demo_analysis\vc100.pdb'; linking object as if no debug info
+     1>interfaces.lib(interfaces.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'interfaces.lib(interfaces.obj)' or at 'C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\csgo\addons\demo_analysis\vc100.pdb'; linking object as if no debug info
+         CSGOAimGraph.vcxproj -> C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\csgo\addons\demo_analysis\CSGOAimGraph.dll
+     1>Done Building Project "E:\csgoaimgraph\CSGOAimGraph\CSGOAimGraph\CSGOAimGraph.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.70
