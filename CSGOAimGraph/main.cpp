@@ -29,6 +29,7 @@ void hReadUsercmd_Wrapped( const userCmd *move ) {
 }
 
 void *oReadUsercmd;
+void *oWriteUsercmd;
 //Like __fastcall but caller stack cleanup
 __declspec(naked) void /*__fastcall*/ hReadUsercmd( /*void *buf, userCmd *move, userCmd *from*/) {
 	__asm {
@@ -116,6 +117,7 @@ void __stdcall hEndScene( IDirect3DDevice9 *device ) {
 }
 
 uintptr_t readUserCmdPtr;
+uintptr_t writeUserCmdPtr;
 void *endScenePtr;
 
 void Startup() {
@@ -140,9 +142,15 @@ void Startup() {
 
 	readUserCmdPtr = Sigscan( clientStart, clientEnd,
 		( const uint8_t* )( "\x55\x8B\xEC\x83\xEC\x08\x53\x8B\x5D\x08\x8B\xC2\x56\x57\x8B\xF1" ),
-		( const uint8_t* )( "xxxxxxxxxxxxxxxx" ) );
+		( const uint8_t* )( "xxxxxx?xxxx???xx" ) );
+
+	writeUserCmdPtr = Sigscan(clientStart, clientEnd,
+		(const uint8_t*)("\x55\x8B\xEC\x83\xE4\xF8\x00\x00\x00\x8B\xD9"),
+		(const uint8_t*)("xxxxxx???xx"));
 
 	oReadUsercmd = DetourFunction( ( byte* )( readUserCmdPtr ), ( byte* )( hReadUsercmd ) );
+
+	oWriteUsercmd = DetourFunction((byte*)(writeUserCmdPtr), (byte*)(hReadUsercmd));
 
 	MODULEINFO d3dModInfo;
 	const HMODULE d3dModule = GetModuleHandle( "d3d9.dll" );
