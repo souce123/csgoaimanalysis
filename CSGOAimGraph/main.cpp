@@ -144,13 +144,13 @@ void Startup() {
 		( const uint8_t* )( "\x55\x8B\xEC\x83\xEC\x08\x53\x8B\x5D\x08\x8B\xC2\x56\x57\x8B\xF1" ),
 		( const uint8_t* )( "xxxxxx?xxxx???xx" ) );
 
-	writeUserCmdPtr = Sigscan(clientStart, clientEnd,
-		(const uint8_t*)("\x55\x8B\xEC\x83\xE4\xF8\x00\x00\x00\x8B\xD9"),
-		(const uint8_t*)("xxxxxx???xx"));
+	/*writeUserCmdPtr = Sigscan(clientStart, clientEnd,
+		(const uint8_t*)("\x55\x8B\xEC\x83\xE4\xF8\x51\x53\x56\x8B\xD9\x8B\x0D"),
+		(const uint8_t*)("xxxxxxxxxxxxx"));*/
 
 	oReadUsercmd = DetourFunction( ( byte* )( readUserCmdPtr ), ( byte* )( hReadUsercmd ) );
 
-	oWriteUsercmd = DetourFunction((byte*)(writeUserCmdPtr), (byte*)(hReadUsercmd));
+	//oWriteUsercmd = DetourFunction((byte*)(writeUserCmdPtr), (byte*)(hReadUsercmd));
 
 	MODULEINFO d3dModInfo;
 	const HMODULE d3dModule = GetModuleHandle( "d3d9.dll" );
@@ -168,5 +168,6 @@ void Startup() {
 
 void Shutdown() {
 	DetourRemove( ( byte* )( oReadUsercmd ), ( byte* )( readUserCmdPtr ) );
-	DetourRemove( ( byte* )( oReadUsercmd ), ( byte* )( endScenePtr ) );
+	DetourRemove((byte*)(oWriteUsercmd), (byte*)(writeUserCmdPtr));
+	DetourRemove((byte*)(oEndScene), (byte*)(endScenePtr));
 }

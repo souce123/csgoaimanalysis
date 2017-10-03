@@ -73,8 +73,10 @@ float ClDemoShowHistory() {
 
 extern void Startup();
 bool pluginCrap::Load( CreateInterfaceFn interfaceFactory, CreateInterfaceFn gameServerFactory ) {
+	Msg("Try to load demo analysis tool ...\n");
 	ConnectTier1Libraries( &interfaceFactory, 1 );
 	//ConnectTier2Libraries( &interfaceFactory, 1 );
+	Msg("Trying to register convars ...\n");
 	ConVar_Register( 0 );
 
 	Msg( "Demo analysis tool loaded.\n"
